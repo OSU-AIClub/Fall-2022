@@ -1,8 +1,8 @@
 # Dataset
-data/
+old/
 models/
 submission.csv
-
+!build_dataset.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
