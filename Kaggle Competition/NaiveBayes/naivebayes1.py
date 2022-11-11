@@ -5,10 +5,7 @@ import pandas as pd
 sns.set(style='whitegrid', palette='muted', font_scale=1.5)
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from dataset import X_train, X_val, y_train, y_val, X_test, n_classes
-from tokenizer import Tokenizer
-from tqdm import tqdm
-import nltk
+from dataset import X_train, X_val, y_train, y_val
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import CountVectorizer

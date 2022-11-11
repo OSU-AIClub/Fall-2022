@@ -11,7 +11,7 @@ nltk.download('stopwords')
 warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
 
 
-""" Define Tokenizer - POS Tagging"""
+""" Define Tokenizer - Stemming+ POS Tagging"""
 # 0.852875
 class Tokenizer:
 
@@ -27,11 +27,13 @@ class Tokenizer:
 
     def tokenize(self, text):
         # Clean input text
-        clean = self.clean(text).lower()
+        clean = self.clean(text)
 
+        stemmer = nltk.stem.SnowballStemmer('english')
         # Use predefined list NLTK's English stopwords
         text = nltk.word_tokenize(clean)
         text = nltk.pos_tag(text)
+        text = [(stemmer.stem(w), t) for w, t in text]
         
         
         return text
